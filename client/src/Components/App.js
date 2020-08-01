@@ -5,12 +5,15 @@ import {MuiThemeProvider} from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import HomePage from "./HomePage";
 import theme from "./Theme"
+import "./styles_helper.css"
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
+import Home from "./HomePage";
+import Dashboard from "./Dashboard";
 
 class App extends Component {
 
@@ -24,23 +27,19 @@ class App extends Component {
 
         return (
             <Router>
-                <div className="App">
-                    <MuiThemeProvider theme={theme}>
-                    <AppBar position="static">
-                        <Toolbar>
-                            <IconButton edge="start"  color="inherit" aria-label="menu">
-                                <MenuIcon/>
-                            </IconButton>
-                            <Typography variant="h6">
-                                News
-                            </Typography>
-                            <Button color="inherit">Login</Button>
-                        </Toolbar>
-                    </AppBar>
+                <div className="App" style={{
+                    backgroundColor:"#028090",
+                    height: "100%",
 
+
+                }}>
+
+                    <MuiThemeProvider theme={theme}>
                         <CssBaseline/>
-                        <Route exact path='/' render={() => <HomePage/>}/>
-                        <Route exact path='/about' render={() => <HomePage/>}/>
+
+                            <Route exact path='/' render={() => <Home/>}/>
+                            <Route exact path='/dashboard' render={() => <Dashboard/>}/>
+
                     </MuiThemeProvider>
                 </div>
             </Router>

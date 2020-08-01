@@ -1,43 +1,40 @@
 import React, {Component, Fragment} from "react";
 import {connect} from "react-redux";
 import withStyles from "@material-ui/core/styles/withStyles";
-import axios from "axios";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import Dashboard from "./Dashboard";
 
 const styles = theme => ({});
 
-class HomePage extends Component {
+class Home extends Component {
     constructor(props) {
         super(props)
     }
-
-  componentDidMount = () => {
-    this.getBlogPost();
-  };
-
-
-  getBlogPost = () => {
-    axios.get('/api')
-      .then((response) => {
-        const data = response.data;
-        this.setState({ posts: data });
-        console.log(response.data)
-        console.log('Data has been received!nbn!');
-      })
-      .catch(() => {
-        alert('Error retrieving data!!!');
-      });
-  }
 
 
     render() {
         const {classes} = this.props;
 
         return (
-            <Fragment>
-                <h1> MERN STACK </h1>
-                <p>Homepage! Welcome to my website</p>
+            <Grid container
+                  direction="row"
+                  justify="center"
+                  alignItems="center" style={{height: "100%"}}>
+                <Grid item style={{
+                    padding: 32,
+                    backgroundColor: "#FFFFFF",
+                    borderRadius: 2,
+                }}>
+                    <SignIn/>
+                    <SignUp/>
 
-            </Fragment>
+                </Grid>
+            </Grid>
         )
     }
 }
@@ -47,4 +44,4 @@ const mapStateToProps = state => ({});
 
 const mapDispatch = {}
 
-export default connect(mapStateToProps, mapDispatch)(withStyles(styles)(HomePage));
+export default connect(mapStateToProps, mapDispatch)(withStyles(styles)(Home));
