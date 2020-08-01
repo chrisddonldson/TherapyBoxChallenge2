@@ -16,16 +16,9 @@ class DashboardCard extends Component {
 
     render() {
         const {classes} = this.props;
-        let itemStyle = {
 
-            backgroundColor: "#FFFFFF",
-            borderRadius: 2,
-            height: 300,
-            width:300
-
-        }
         return (
-            <div style={{display:"inline-block", width: 300, height:180 , backgroundColor: "#FFFFFF", borderRadius:4, padding: 8, float:"left", margin:16}}>
+            <div style={{display:"inline-block", width: 300, height:400 , backgroundColor: "#FFFFFF", borderRadius:4, padding: 8, float:"left", margin:16}}>
                 <Typography variant={"h6"}>{this.props.title}</Typography>
                     {this.props.content}
             </div>

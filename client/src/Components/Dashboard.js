@@ -4,6 +4,13 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import DashboardCard from "./DashboardCard";
+import {getWeather, setupDashboard, setupNews, testReducer} from "../actions/placeholderActions";
+import WeatherCardContents from "./WeatherCardContents";
+import NewsCardContents from "./NewsCardContents";
+import SportsCardContents from "./SportsCardContents";
+import ImageCardContents from "./ImageCardContents";
+import ToDoCardContents from "./ToDoCardContents";
+import ClothingCardContents from "./ClothingCardContents";
 
 const styles = theme => ({});
 
@@ -13,8 +20,10 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
+        this.props.setupDashboard()
+        this.props.setupNews()
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position => console.log(position)));
+            navigator.geolocation.getCurrentPosition((position => this.props.getWeather(position)));
         } else {
             console.log("geolocation not supported")
         }
@@ -22,13 +31,13 @@ class Dashboard extends Component {
 
     render() {
         const {classes} = this.props;
-        let itemStyle = {
 
+        let itemStyle = {
             backgroundColor: "#FFFFFF",
             borderRadius: 2,
             height: 300,
-
         }
+
         return (
             <Container style={{height: "100%"}}>
                 <div>
@@ -37,15 +46,14 @@ class Dashboard extends Component {
                     </div>
                     <div style={{margin: "auto"}}>
                         <DashboardCard title={"Weather"}
-                                       content={<Fragment><p>weather icon</p><p>Temp</p><p>Location</p></Fragment>}/>
-                        <DashboardCard title={"News"} content={<Fragment><p>Headline</p><p>Content</p></Fragment>}/>
-                        <DashboardCard title={"Sports"} content={<Fragment><p>Headline</p><p>Content</p></Fragment>}/>
+                                       content={<WeatherCardContents/>}/>
+                        <DashboardCard title={"News"} content={<NewsCardContents />}/>
+                        <DashboardCard title={"Sports"} content={<SportsCardContents />}/>
                         <DashboardCard title={"Photos"}
-                                       content={<Fragment><p>photo1</p><p>photo2</p><p>photo3</p><p>photo4</p>
-                                       </Fragment>}/>
+                                       content={<ImageCardContents/>}/>
                         <DashboardCard title={"Tasks"}
-                                       content={<Fragment><p>task1</p><p>task2</p><p>task3</p></Fragment>}/>
-                        <DashboardCard title={"Clothes"} content={<Fragment>Pie Chart :)</Fragment>}/>
+                                       content={<ToDoCardContents />}/>
+                        <DashboardCard title={"Clothes"} content={<ClothingCardContents/>}/>
                     </div>
                 </div>
             </Container>
@@ -54,9 +62,17 @@ class Dashboard extends Component {
     }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    test: state.placeholderR.test
+
+});
 
 
-const mapDispatch = {}
+const mapDispatch = {
+    testReducer,
+    setupDashboard,
+    getWeather,
+    setupNews
+}
 
 export default connect(mapStateToProps, mapDispatch)(withStyles(styles)(Dashboard));

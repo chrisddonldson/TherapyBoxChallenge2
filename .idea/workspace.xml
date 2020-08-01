@@ -20,14 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="327353bc-d57f-4b08-83b5-9d9cf202a078" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/styles_helper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/ClothingCardContents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/ImageCardContents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/NewsCardContents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/SportsCardContents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/ToDoCardContents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/WeatherCardContents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/piechart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/AboutPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +108,9 @@
       <workItem from="1596120085175" duration="1528000" />
       <workItem from="1596123204572" duration="1215000" />
       <workItem from="1596293699932" duration="27000" />
-      <workItem from="1596293769438" duration="7209000" />
+      <workItem from="1596293769438" duration="7850000" />
+      <workItem from="1596309959827" duration="3069000" />
+      <workItem from="1596313060864" duration="12501000" />
     </task>
     <servers />
   </component>
@@ -116,10 +130,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1596121613020">
+    <state x="723" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596320488733">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596121613020" />
+    <state x="723" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596320488733" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1596324279450">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596324279450" />
     <state width="1892" height="290" key="GridCell.Tab.0.bottom" timestamp="1596120157552">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
@@ -136,9 +154,9 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1892" height="290" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1596120157552" />
-    <state x="623" y="227" key="search.everywhere.popup" timestamp="1596298497075">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1596324543010">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596298497075" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596324543010" />
   </component>
 </project>
