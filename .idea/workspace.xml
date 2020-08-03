@@ -19,41 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="327353bc-d57f-4b08-83b5-9d9cf202a078" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/public/layout_pattern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/todo/CreateToDo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/todo/EditToDo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/todo/ToListPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/util/storage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/ImagePost.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Todo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/UserSession.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/ClothingCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ClothingCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/ImageCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/NewsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/NewsCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/SportsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/SportsCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/ToDoCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/WeatherCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/WeatherCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/piechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/piechart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/blogPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="327353bc-d57f-4b08-83b5-9d9cf202a078" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +100,7 @@
       <workItem from="1596309959827" duration="3069000" />
       <workItem from="1596313060864" duration="12600000" />
       <workItem from="1596352209772" duration="19404000" />
-      <workItem from="1596374603026" duration="25773000" />
+      <workItem from="1596374603026" duration="26167000" />
     </task>
     <servers />
   </component>
