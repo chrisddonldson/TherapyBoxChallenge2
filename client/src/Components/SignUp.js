@@ -94,7 +94,6 @@ class SignUp extends Component {
                         onChange={this.handleInputChange}
                     />
                     <br/>
-                    <input type="file" name="fileToUpload" id="fileToUpload"/>
                     <br/>
                     <Typography color={"error"}>{this.props.signUpError}</Typography>
                     <Button fullWidth style={{marginTop: 16}} onClick={this.onSubmit}> Sign Up</Button>

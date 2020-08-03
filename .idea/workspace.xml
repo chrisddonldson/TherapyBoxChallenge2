@@ -20,26 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="327353bc-d57f-4b08-83b5-9d9cf202a078" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/Components/todo/TodoItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ClothingCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ClothingCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/NewsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/NewsCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/SportsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/SportsCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/WeatherCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/WeatherCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ImagePost.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ImagePost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignUp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +104,7 @@
       <workItem from="1596309959827" duration="3069000" />
       <workItem from="1596313060864" duration="12600000" />
       <workItem from="1596352209772" duration="19404000" />
-      <workItem from="1596374603026" duration="40751000" />
+      <workItem from="1596374603026" duration="41582000" />
     </task>
     <servers />
   </component>
