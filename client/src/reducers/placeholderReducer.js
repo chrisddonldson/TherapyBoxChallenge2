@@ -19,7 +19,13 @@ import {
     SET_SIGN_UP_ERROR,
     SET_ALLOW_DASHBOARD,
     SET_USERNAME,
-    SET_SIGN_UP_SUCCESS, SET_SELECTED_TEAM
+    SET_SIGN_UP_SUCCESS,
+    SET_SELECTED_TEAM,
+    SET_IS_IMAGE_MODAL_OPEN,
+    SET_IS_GETTING_IMAGES,
+    SET_USER_ID,
+    SET_IS_POSTING_IMAGE,
+    SET_IMAGES, SET_IS_GETTING_TODOS, SET_TODOS
 } from "../actions/placeholderActions";
 
 const initialState = {
@@ -47,13 +53,21 @@ const initialState = {
     username: "",
     signUpSuccess: false,
     selectedTeam: null,
-selectedTeamValue:""
+    selectedTeamValue: "",
+    isImageModalOpen: false,
+    isGettingImages: true,
+    userId: "",
+    isPostingImage: false,
+    images: [],
+    isGettingToDos: true,
+    toDos: []
+
 }
 
 export default function (state = initialState, action) {
     switch (action.type) {
         case SET_SELECTED_TEAM:
-            let resultingTeam = state.teamsVictoryInfo.find(e=>e.HomeTeam === action.payload)
+            let resultingTeam = state.teamsVictoryInfo.find(e => e.HomeTeam === action.payload)
             console.log(resultingTeam)
             //selected team in as string.
             //find it in teams array
@@ -94,6 +108,45 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 isClothesLoading: action.payload,
+            }
+        case SET_IMAGES:
+            return {
+                ...state,
+                images: action.payload,
+            }
+        case SET_USER_ID:
+            return {
+                ...state,
+                userId: action.payload,
+            }
+
+        case SET_IS_GETTING_TODOS:
+            console.log("setting todos!")
+            console.log(action.payload)
+            return {
+                ...state,
+                isGettingToDos: action.payload,
+            }
+
+        case SET_TODOS:
+            return {
+                ...state,
+                toDos: action.payload,
+            }
+        case SET_IS_POSTING_IMAGE:
+            return {
+                ...state,
+                isPostingImage: action.payload,
+            }
+        case SET_IS_GETTING_IMAGES:
+            return {
+                ...state,
+                isGettingImages: action.payload,
+            }
+        case SET_IS_IMAGE_MODAL_OPEN:
+            return {
+                ...state,
+                isImageModalOpen: action.payload,
             }
         case SET_ALLOW_DASHBOARD:
             return {
@@ -212,7 +265,7 @@ export default function (state = initialState, action) {
                     }
                 }
             }
-            let selectedTeam =  teams[0]
+            let selectedTeam = teams[0]
 
             return {
                 ...state,

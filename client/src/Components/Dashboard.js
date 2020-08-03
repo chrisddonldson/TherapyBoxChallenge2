@@ -101,7 +101,10 @@ class Dashboard extends Component {
                             />
                             <DashboardCard title={"Sports"} content={<SportsCardContents/>}
                             />
-                            <DashboardCard title={"News"} content={<NewsCardContents/>}
+                                 <DashboardCard title={"Tasks"}
+                                           content={<ToDoCardContents/>}
+                            />
+                            <DashboardCard title={"Clothes"} content={<ClothingCardContents/>}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6} container direction={"column"} style={{
@@ -110,14 +113,13 @@ class Dashboard extends Component {
                             paddingRight: 8
 
                         }}>
+                            <DashboardCard title={"News"} content={<NewsCardContents/>}
+                            />
                             <DashboardCard title={"Photos"}
                                            content={<ImageCardContents/>}
                             />
-                            <DashboardCard title={"Tasks"}
-                                           content={<ToDoCardContents/>}
-                            />
-                            <DashboardCard title={"Clothes"} content={<ClothingCardContents/>}
-                            />
+
+
                         </Grid>
                     </Grid>
                 </Container>

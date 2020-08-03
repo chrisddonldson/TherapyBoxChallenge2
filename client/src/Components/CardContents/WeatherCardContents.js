@@ -30,12 +30,12 @@ class WeatherCardContents extends Component {
                 ) : (
                     <Fragment>
                         <div style={{float: "left"}}>
-                            <Typography varient={"h6"}>{weather.name}</Typography>
-                            <Typography varient={"h6"}>{(weather.main.temp - 273.15).toFixed(1)}c</Typography>
+                            <Typography variant={"h5"} style={{color:"#313131"}}>{weather.name}</Typography>
+                            <Typography variant={"h6"} style={{color:"#5c5c5c"}}>Current Temp:{(weather.main.temp - 273.15).toFixed(1)}°c</Typography>
                         </div>
 
                         <img src={"http://openweathermap.org/img/wn/" + weather.weather[0].icon + "@2x.png"}
-                             style={{float: "right", width: 80}}/>
+                             style={{float: "right", width: 80,backgroundColor: "#5cac9c", borderRadius:4}}/>
                     </Fragment>
                 )}
 

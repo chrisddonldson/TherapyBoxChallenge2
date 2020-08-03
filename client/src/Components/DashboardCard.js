@@ -19,15 +19,12 @@ class DashboardCard extends Component {
 
         return (
             <Grid item style={{
-                // border: "1px solid blue",
                 height: this.props.height,
                 overflow:"hidden",
                 paddingTop:16
             }}>
                 <div style={{
                     backgroundColor: "#FFFFFF",
-
-                    // border: "1px solid black",
                     width: "100%",
                     borderRadius: 4,
                     overflow: "hidden",

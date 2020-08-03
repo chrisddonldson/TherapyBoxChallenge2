@@ -65,7 +65,6 @@ class SignIn extends Component {
                         Signup Successful. Please log in.
                     </Alert>
                 </Snackbar>
-
                 <Typography variant={"h3"} align={"center"}>Dev Challenge</Typography>
                 <Typography variant={"h4"} align={"center"}>Sign In</Typography>
 

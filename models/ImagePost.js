@@ -9,9 +9,17 @@ const ImagePostSchema = new Schema({
         type: String,
         required: true
     },
-    image: {
-        type: File,
+    image_loc: {
+        type: String,
         required: true
+    },
+    image_sm_loc: {
+        type: String,
+        required: true
+    },
+    deleted: {
+        type: Boolean,
+        default: false
     },
 });
 

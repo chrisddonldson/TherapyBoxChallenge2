@@ -46,7 +46,6 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.props.allowDashboard)
         if (this.props.allowDashboard) {
             return <Dashboard/>
         } else {

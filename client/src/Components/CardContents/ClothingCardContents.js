@@ -46,8 +46,6 @@ class ClothingCardContents extends Component {
                 <Fragment>
                     {this.props.clothesCounted.map(v => {
                         let opac = ((v.count-140)/100)*1.4
-                        let blue = opac*255
-                        console.log(opac)
                         return <Typography
                             variant={"body2"}
                             key={v.name}

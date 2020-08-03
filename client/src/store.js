@@ -5,9 +5,10 @@ import rootReducer from './reducers/rootReducer';
 import promise from "redux-promise-middleware"
 import createSagaMiddleware from 'redux-saga'
 import {
-    watchGetWeather, watchLogin, watchLogout,
+    watchGetToDos,
+    watchGetWeather, watchLogin, watchLogout, watchPostImage,
     watchSetupClothing,
-    watchSetupDashboard,
+    watchSetupDashboard, watchSetUpImages,
     watchSetupNews,
     watchSetupSports, watchSignup, watchVerifyToken
 } from "./sagas/dashboardSagas";
@@ -24,4 +25,7 @@ sagaMiddleware.run(watchVerifyToken)
 sagaMiddleware.run(watchLogin)
 sagaMiddleware.run(watchLogout)
 sagaMiddleware.run(watchSignup)
+sagaMiddleware.run(watchSetUpImages)
+sagaMiddleware.run(watchPostImage)
+sagaMiddleware.run(watchGetToDos)
 export default store;

@@ -1,11 +1,12 @@
 import {put, takeEvery} from "@redux-saga/core/effects";
 import {
+    GET_TO_DOS,
     GET_WEATHER,
     LOGIN,
-    LOGOUT,
+    LOGOUT, POST_IMAGE, SET_IS_IMAGE_MODAL_OPEN,
     SET_IS_SIGNING_UP,
     SET_LOGIN_SCREEN,
-    SET_SIGN_IN_ERROR,
+    SET_SIGN_IN_ERROR, SET_UP_IMAGES, SET_USER_ID,
     SETUP_CLOTHING,
     SETUP_DASHBOARD,
     SETUP_NEWS,
@@ -19,6 +20,10 @@ import {getFromStorage, setInStorage} from "../util/storage";
 
 export function* watchLogin() {
     yield takeEvery(LOGIN, doLogin)
+}
+
+export function* watchSetUpImages() {
+    yield takeEvery(SET_UP_IMAGES, doSetUpImages)
 }
 
 export function* watchLogout() {
@@ -53,6 +58,13 @@ export function* watchVerifyToken() {
     yield takeEvery(VERIFY_TOKEN, doVerifyToken)
 }
 
+export function* watchPostImage() {
+    yield takeEvery(POST_IMAGE, doPostImage)
+}
+export function* watchGetToDos() {
+    yield takeEvery(GET_TO_DOS, doGetToDos)
+}
+
 function* doSetUpDashboard(action) {
 
 }
@@ -69,6 +81,7 @@ function* doLogin(action) {
 
         yield put({type: "SET_TOKEN", payload: response.token})
         yield put({type: "SET_USERNAME", payload: response.username})
+        yield put({type: "SET_USER_ID", payload: response.userId})
 
         setInStorage('therapy_box', response.token)
         yield put({type: "SET_ALLOW_DASHBOARD", payload: true})
@@ -82,18 +95,17 @@ function* doLogin(action) {
 }
 
 function* doSignup(action) {
-    console.log(action.payload)
+
     yield put({type: "SET_IS_SIGNING_UP", payload: true})
     let response = yield axios.post('/api/signup', action.payload)
         .then(r => r.data, (error) => {
             console.log(error)
         })
-     console.log(response)
+
     if (response.success) {
         yield put({type: "SET_SIGN_UP_SUCCESS", payload: true})
         yield put({type: "SET_LOGIN_SCREEN", payload: "SIGNIN"})
-    }
-    else {
+    } else {
         console.log("ERROR" + response.message)
         yield put({type: "SET_SIGN_UP_ERROR", payload: response.message})
     }
@@ -105,39 +117,50 @@ function* doSignup(action) {
 }
 
 function* doLogout(action) {
-    console.log("Logout")
     const token = getFromStorage('therapy_box')
 
-     let response = yield axios.get('/api/logout?token=' + token)
-            .then(r => r.data, (error) => {
-                console.log(error)
-            })
-    console.log(response)
+    let response = yield axios.get('/api/logout?token=' + token)
+        .then(r => r.data, (error) => {
+            console.log(error)
+        })
+
     yield put({type: "SET_ALLOW_DASHBOARD", payload: false})
     yield put({type: "SET_TOKEN", payload: ""})
     setInStorage('therapy_box', "")
 }
 
 function* doVerifyToken(action) {
-    console.log("Verifying token")
+
     yield put({type: "SET_IS_SIGN_IN_LOADING", payload: true})
     const token = getFromStorage('therapy_box')
-    if(token!="") {
-        console.log("token not null")
+    if (token != "") {
+
         let response = yield axios.get('/api/verify?token=' + token)
             .then(r => r.data, (error) => {
                 console.log(error)
             })
-        console.log(response)
-        if(response.success){
+
+        if (response.success) {
             yield put({type: "SET_TOKEN", payload: token})
             yield put({type: "SET_USERNAME", payload: response.user.username})
+            yield put({type: "SET_USER_ID", payload: response.userId})
             yield put({type: "SET_ALLOW_DASHBOARD", payload: true})
         }
     }
     yield put({type: "SET_IS_SIGN_IN_LOADING", payload: false})
 }
 
+function* doGetToDos(action) {
+    yield put({type: "SET_IS_GETTING_TODOS", payload: true})
+    let todos = yield axios.get('/api/todo')
+        .then(r => r.data, (error) => {
+            console.log(error)
+        })
+    console.log(todos)
+     yield put({type: "SET_IS_GETTING_TODOS", payload: false})
+    yield put({type: "SET_TODOS", payload: todos})
+
+}
 function* doSetUpClothing(action) {
     yield put({type: "SET_IS_GETTING_CLOTHING", payload: true})
     let clothes = yield axios.get('/api/clothes')
@@ -146,6 +169,36 @@ function* doSetUpClothing(action) {
         })
     yield put({type: "SET_CLOTHES", payload: clothes})
     yield put({type: "SET_IS_GETTING_CLOTHING", payload: false})
+}
+
+function* doPostImage(action) {
+    console.log(action.payload)
+    yield put({type: "SET_IS_POSTING_IMAGE", payload: true})
+
+    let formData = new FormData();
+
+    formData.append("imagePost", action.payload.file);
+    formData.append("userId", action.payload.userId);
+    let resp = yield axios.post('/api/file/', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    }).then(r => r, (error) => {
+        console.log(error)
+    })
+    yield put({type: "SET_IS_POSTING_IMAGE", payload: false})
+    yield put({type: "SET_IS_IMAGE_MODAL_OPEN", payload: false})
+    yield put({type: "SET_UP_IMAGES", payload: action.payload.userId})
+}
+
+function* doSetUpImages(action) {
+    yield put({type: "SET_IS_GETTING_IMAGES", payload: true})
+    let images = yield axios.get('/api/file?userId=' + action.payload)
+        .then(r => r, (error) => {
+            console.log(error)
+        })
+    yield put({type: "SET_IMAGES", payload: images.data.data})
+    yield put({type: "SET_IS_GETTING_IMAGES", payload: false})
 }
 
 function* doGetWeather(action) {
@@ -168,7 +221,7 @@ function* doSetUpNews(action) {
         .then(r => r.data, (error) => {
             console.log(error)
         })
-    console.log(news)
+
     yield put({type: "SET_NEWS", payload: news})
     yield put({type: "SET_IS_GETTING_NEWS", payload: false})
 }

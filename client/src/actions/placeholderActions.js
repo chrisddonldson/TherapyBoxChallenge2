@@ -31,9 +31,37 @@ export const SET_USERNAME = "SET_USERNAME"
 export const SET_SIGN_UP_SUCCESS = "SET_SIGN_UP_SUCCESS"
 export const SET_SELECTED_TEAM = "SET_SELECTED_TEAM"
 export const GET_TO_DOS = "GET_TO_DOS"
+export const SET_IS_IMAGE_MODAL_OPEN = "SET_IS_IMAGE_MODAL_OPEN"
+export const SET_UP_IMAGES = "SET_UP_IMAGES"
+export const POST_IMAGE = "POST_IMAGE"
+export const SET_IS_GETTING_IMAGES = "SET_IS_GETTING_IMAGES"
+export const SET_USER_ID = "SET_USER_ID"
+export const SET_IS_POSTING_IMAGE = "SET_IS_POSTING_IMAGE"
+export const SET_IMAGES = "SET_IMAGES"
+export const SET_IS_GETTING_TODOS = "SET_IS_GETTING_TODOS"
+export const SET_TODOS = "SET_IMAGES"
 
 
+export const setupImages = (data) => dispatch => {
+    dispatch({
+        type: SET_UP_IMAGES,
+        payload:data
+    })
+}
 
+export const postImage = (data) => dispatch => {
+    dispatch({
+        type: POST_IMAGE,
+        payload:data
+    })
+}
+
+export const setImageModalOpen = (data) => dispatch => {
+    dispatch({
+        type: SET_IS_IMAGE_MODAL_OPEN,
+        payload:data
+    })
+}
 
 export const setSelectedTeam = (data) => dispatch => {
     dispatch({

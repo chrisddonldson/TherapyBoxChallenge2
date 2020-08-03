@@ -7,7 +7,91 @@ const CSVToJSON = require('csvtojson');
 let User = require('../models/User');
 let UserSession = require('../models/UserSession');
 let Todo = require('../models/Todo');
+let ImagePost = require('../models/ImagePost');
 const puppeteer = require('puppeteer');
+const multer = require('multer')
+const sharp = require('sharp')
+const path = require('path')
+const fs = require('fs')
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'client/public/uploads/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + file.originalname);
+    }
+})
+
+const fileFilter = (req, file, cb) => {
+    // reject a file
+    if (file.mimetype === "image/jpeg" || file.mimetype === 'image/png') {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+}
+
+const upload = multer({
+    storage: storage,
+    limits: {fileSize: 1024 * 1024 * 5},
+    fileFilter: fileFilter
+});
+
+router.post("/file/", upload.single("imagePost"), (req, res, next) => {
+    console.log(req.file)
+    const {filename: image} = req.file
+    sharp(req.file.path)
+        .resize(280)
+        .jpeg({quality: 50})
+        .toFile(
+            path.resolve(req.file.destination, 'resized', image)
+        ).then(() => {
+
+        console.log("Uploaded resize")
+        const imagePost = new ImagePost({
+            userId: req.body.userId,
+            image_loc: "\\uploads\\" + image,
+            image_sm_loc: "\\uploads\\resized\\" + image
+        })
+        imagePost.save().then(result => {
+            console.log(result);
+            res.status(201).json({
+                message: "Image Uploaded Successful"
+            })
+        }, (err) => {
+            console.log(err)
+            res.json({
+                message: "Server error:" + err,
+                success: false
+            })
+        })
+
+    }, (err) => {
+        console.log(err)
+        res.json({
+            message: "Server error:" + err,
+            success: false
+        })
+    })
+
+
+})
+
+router.get("/file/", (req, res, next) => {
+ let {query} = req
+    let {userId} = query
+    console.log(userId)
+    ImagePost.find(
+        {userId: userId},
+        (err, imagePosts) => {
+            if (err) {
+                return res.send({success: false, message: 'Server error'})
+            } else {
+                return res.json({success:true, data:imagePosts})
+            }
+        })
+})
 
 router.get('/clothes', (rew, res) => {
     axios.get("https://therapy-box.co.uk/hackathon/clothing-api.php?username=swapnil").then(r => {
@@ -185,7 +269,8 @@ router.post('/signin', (req, res) => {
                 success: true,
                 message: 'Valid sign in',
                 token: doc._id,
-                username: username
+                username: username,
+                userId: user._id
             })
         })
 
@@ -221,7 +306,8 @@ router.get('/verify', (req, res) => {
                 res.send({
                         success: true,
                         message: 'Good',
-                        user: user
+                        user: user,
+                        userId: session.userId
                     }
                 ))
 

@@ -30,7 +30,6 @@ class SportsCardContents extends Component {
     }
 
     handleChange = (event) => {
-        console.log(event.target.value)
         this.props.setSelectedTeam(event.target.value)
     };
 
@@ -41,7 +40,7 @@ class SportsCardContents extends Component {
             (this.props.isSportsLoading ? (<p>Loading...</p>) : (
 
                 <Fragment>
-                    {console.log(this.props.teamsVictoryInfo)}
+
                     <Dialog
                         open={this.props.isTeamInspectorOpen}
                         onClose={this.handleClose}
@@ -54,14 +53,14 @@ class SportsCardContents extends Component {
                                 onChange={this.handleChange}
                                 style={{marginLeft:"auto", marginRight:"auto"}}
                             >
-                                {this.props.teamsVictoryInfo.map(team => {
-                                    return <MenuItem key={team.HomeTeam}
+                                {this.props.teamsVictoryInfo.map((team, i)  => {
+                                    return <MenuItem key={team.HomeTeam +   i}
                                                      value={team.HomeTeam}>{team.HomeTeam}</MenuItem>
                                 })}
                             </Select>
                             <div style={{float: "right"}}>
                                 <Typography variant={"h6"}>Victorious Against</Typography>
-                                {this.props.selectedTeam.hasBeat.map(v => {
+                                {this.props.selectedTeam.hasBeat.map((v,i) => {
                                     return <p style={{
                                         display: "inline-block",
                                         float: "left",
@@ -69,7 +68,7 @@ class SportsCardContents extends Component {
                                         margin: 4,
                                         backgroundColor: "#b0ceae",
                                         borderRadius: 2
-                                    }} key={v}>{v}</p>
+                                    }} key={v+i}>{v}</p>
                                 })}
                             </div>
                         </Container>

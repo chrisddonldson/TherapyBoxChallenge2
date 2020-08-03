@@ -32,7 +32,6 @@ class NewsCardContents extends Component {
 
     render() {
         const {classes} = this.props;
-        console.log("news loading" + this.props.isNewsLoading)
         let container = {
             width: "100%",
             height: 200,
@@ -71,13 +70,10 @@ class NewsCardContents extends Component {
                         style={{outline: "none", paddingTop:32, paddingBottom:32}}
                     >
                         <Container style={{marginTop:32, marginBottom:32}}>
-                            {/*<img src={this.props.news.imgs} style={{width: 200, height: "auto"}}/>*/}
                             <Typography variant={"h3"}>{this.props.news.items[0].title}</Typography>
                             <div style={container}>
                                 <img style={imageContainer}></img>
                             </div>
-
-
                             <Typography variant={"body1"}>{this.props.news.items[0].content}</Typography>
                             <Typography variant={"subtitle1"}>Read more at: <a href={this.props.news.items[0].link}>{this.props.news.items[0].link}</a></Typography>
 
@@ -87,7 +83,6 @@ class NewsCardContents extends Component {
                     <div style={container}>
                         <img style={imageContainer}></img>
                     </div>
-                    {/*<img src={this.props.news.imgs} style={{width: 200, height: "auto"}}/>*/}
                     <Typography variant={"h6"}>{this.props.news.items[0].title}</Typography>
                     <Typography variant={"subtitle1"} style={{fontSize: 10}}><a
                         href={this.props.news.items[0].link}>{this.props.news.items[0].link}</a></Typography>
