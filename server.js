@@ -1,4 +1,3 @@
-// Import npm packages
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -10,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 8080; // Step 1
 
 const routes = require('./routes/api');
+
 
 const uri =  process.env.ATLAS_URI;
 mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true}
@@ -32,5 +32,6 @@ if (process.env.NODE_ENV === 'production') {
 // HTTP request logger
 app.use(morgan('tiny'));
 app.use('/api', routes);
+
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));

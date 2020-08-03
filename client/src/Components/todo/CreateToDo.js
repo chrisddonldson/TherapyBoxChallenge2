@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({});
 
-class ToDoCardContents extends Component {   constructor(props) {
+class CreateToDo extends Component {   constructor(props) {
        super(props)
       }
    componentDidMount() {}
@@ -13,7 +13,7 @@ class ToDoCardContents extends Component {   constructor(props) {
 
          return (
                     <Fragment>
-                    this is the ToDoCardContents component speaking!
+                    this is the CreateToDo component speaking!
                     </Fragment>
          )
      }
@@ -28,4 +28,4 @@ class ToDoCardContents extends Component {   constructor(props) {
 
  }
 
- export default connect(mapStateToProps, mapDispatch)(withStyles(styles)(ToDoCardContents));
+ export default connect(mapStateToProps, mapDispatch)(withStyles(styles)(CreateToDo));

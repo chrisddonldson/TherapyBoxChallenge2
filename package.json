@@ -17,12 +17,18 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
+    "bcrypt": "^5.0.0",
+    "cheerio": "^1.0.0-rc.3",
     "concurrently": "^5.0.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "get-image-urls": "^1.0.5",
+    "jsdom": "^16.3.0",
     "mongoose": "^5.7.9",
     "morgan": "^1.9.1",
+    "puppeteer": "^5.2.1",
+    "request": "^2.88.2",
     "rss-parser": "^3.9.0"
   }
 }

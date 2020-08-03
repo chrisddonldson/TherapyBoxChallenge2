@@ -18,10 +18,43 @@ class DashboardCard extends Component {
         const {classes} = this.props;
 
         return (
-            <div style={{display:"inline-block", width: 300, height:400 , backgroundColor: "#FFFFFF", borderRadius:4, padding: 8, float:"left", margin:16}}>
-                <Typography variant={"h6"}>{this.props.title}</Typography>
-                    {this.props.content}
-            </div>
+            <Grid item style={{
+                // border: "1px solid blue",
+                height: this.props.height,
+                overflow:"hidden",
+                paddingTop:16
+            }}>
+                <div style={{
+                    backgroundColor: "#FFFFFF",
+
+                    // border: "1px solid black",
+                    width: "100%",
+                    borderRadius: 4,
+                    overflow: "hidden",
+                }}>
+                    <Typography variant={"h6"} style={{
+                        backgroundColor: "#5cac9c",
+                        display: "inline-block",
+                        width: "100%",
+                        height: 36,
+                        paddingLeft: 8,
+                        zIndex: 10,
+                        marginBottom: -4,
+                        color:"white",
+                        fontWeight:"bold",
+                        paddingBottom:4
+                    }}>{this.props.title}</Typography>
+                    <div style={{
+                        display: "inline-block",
+                        backgroundColor: "#FFFFFF",
+                        width: "100%",
+                        padding: 8,
+                        zIndex: -10,
+                    }}>
+                        {this.props.content}
+                    </div>
+                </div>
+            </Grid>
         )
     }
 }
