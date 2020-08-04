@@ -112,7 +112,7 @@ router.get('/news', (rew, res) => {
         let queryUrl = data.items[0].link
         console.log("Located the link for the headline image")
         puppeteer.launch({
-            'args': [
+            args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
             ],
@@ -235,8 +235,9 @@ router.post('/signup', (req, res) => {
         if (err) {
             return res.send({success: false, message: 'Server error'})
         } else if (previousUsers.length > 0) {
-            return res.send({success: false, message: 'Account already exists'})
+            return res.send({success: false, message: 'Email already exists'})
         }
+
 
         const newUser = new User();
         newUser.email = email
