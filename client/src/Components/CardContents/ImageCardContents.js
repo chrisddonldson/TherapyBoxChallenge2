@@ -3,9 +3,9 @@ import {connect} from "react-redux";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Dialog from "@material-ui/core/Dialog";
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+
 import Button from "@material-ui/core/Button";
-import {postImage, setImageModalOpen, setupImages} from "../../actions/placeholderActions";
+import {postImage, setImageModalOpen, setupImages} from "../../actions/appActions";
 import Grid from "@material-ui/core/Grid";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
@@ -52,7 +52,6 @@ class ImageCardContents extends Component {
                     style={{outline: "none", paddingTop: 32, paddingBottom: 32}}
                 >
                     <Container style={{marginTop: 32, marginBottom: 32}}>
-
                         <form onSubmit={this.handleSubmit}>
                             <input type={"file"} id={"imagePost"} name={"imagePost"} onChange={this.onChange}/>
                             {this.props.images.length > 0 ? (
@@ -60,12 +59,7 @@ class ImageCardContents extends Component {
                                     return <img key={item.image_sm_loc} src={item.image_sm_loc} style={{float:"left"}}/>
                                 }
                             )) : (null)}
-
-
-
-
-
-                            <Button type={"submit"}>Upload file</Button>
+                            <Button type={"submit"} variant={"outlined"}>Upload file</Button>
                             {this.props.isPostingImage ? (
                                 <CircularProgress/>
                             ) : (
@@ -83,9 +77,9 @@ class ImageCardContents extends Component {
                     </Grid>) : (
                     <Fragment>
 
-                        {this.props.images.length > 0 ? (<img src={this.props.images[this.props.images.length-1].image_sm_loc} style={{float:"left"}}/>) : (null)}
+                        {this.props.images.length > 0 ? (<img src={this.props.images[this.props.images.length-1].image_sm_loc} style={{ marginLeft:"auto", marginRight:"auto", display:"block"}}/>) : (null)}
                         <br/>
-                         <Button onClick={() => this.props.setImageModalOpen(true)}>
+                         <Button onClick={() => this.props.setImageModalOpen(true)} style={{marginTop:8}} fullWidth variant={"outlined"} color={"secondary"}>
                             View images
                         </Button>
                     </Fragment>)
@@ -97,11 +91,11 @@ class ImageCardContents extends Component {
 }
 
 const mapStateToProps = state => ({
-    isImageModalOpen: state.placeholderR.isImageModalOpen,
-    isGettingImages: state.placeholderR.isGettingImages,
-    userId: state.placeholderR.userId,
-    isPostingImage: state.placeholderR.isPostingImage,
-    images: state.placeholderR.images,
+    isImageModalOpen: state.appR.isImageModalOpen,
+    isGettingImages: state.appR.isGettingImages,
+    userId: state.userR.userId,
+    isPostingImage: state.appR.isPostingImage,
+    images: state.appR.images,
 
 });
 

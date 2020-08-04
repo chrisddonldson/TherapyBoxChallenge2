@@ -1,82 +1,74 @@
 import {
     SET_IS_GETTING_NEWS,
-    SET_IS_GETTING_WEATHER,
-    SET_IS_GETTING_SPORTS,
     SET_NEWS,
     SET_NEWS_MODAL,
+
+    SET_IS_GETTING_WEATHER,
     SET_WEATHER,
-    TEST_REDUCER,
+
+    SET_IS_GETTING_SPORTS,
     SET_SPORTS,
+    SET_IS_TEAM_INSPECTOR_OPEN,
+    SET_SELECTED_TEAM,
+
     SET_CLOTHES,
     SET_IS_GETTING_CLOTHING,
-    SET_IS_TEAM_INSPECTOR_OPEN,
-    SET_TOKEN,
-    SET_IS_SIGN_IN_LOADING,
-    SET_LOGIN_SCREEN,
-    SET_IS_LOGGING_IN,
-    SET_IS_SIGNING_UP,
-    SET_SIGN_IN_ERROR,
-    SET_SIGN_UP_ERROR,
-    SET_ALLOW_DASHBOARD,
-    SET_USERNAME,
-    SET_SIGN_UP_SUCCESS,
-    SET_SELECTED_TEAM,
+
     SET_IS_IMAGE_MODAL_OPEN,
     SET_IS_GETTING_IMAGES,
-    SET_USER_ID,
     SET_IS_POSTING_IMAGE,
-    SET_IMAGES, SET_IS_GETTING_TODOS, SET_TODOS
-} from "../actions/placeholderActions";
+    SET_IMAGES,
+
+    SET_IS_GETTING_TODOS,
+    SET_TODOS,
+    SET_SELECTED_TODO,
+    SET_TO_DO_DIALOG,
+    SET_DASHBOARD_SCREEN,
+    SET_TO_DO_DIALOG_MODE,
+    SET_IS_TITLE_SUBMITTING,
+    SET_IS_NOTES_SUBMITTING, SET_IS_COMPLETED_SUBMITTING, SET_IS_TO_DO_CHANGE_SUBMITTING
+} from "../actions/appActions";
+import React from "react";
 
 const initialState = {
-    test: false,
-    isWeatherLoading: true,
-    isNewsLoading: true,
     weather: null,
+    isWeatherLoading: true,
+
+    isNewsLoading: true,
     news: null,
     isNewsModalOpen: false,
+
     isSportsLoading: true,
     sports: null,
+    selectedTeam: null,
+    selectedTeamValue: "",
+
     clothes: null,
     isClothesLoading: true,
     clothesCounted: null,
+
     isTeamInspectorOpen: false,
     teamsVictoryInfo: [],
     token: "",
-    isSignInLoading: true,
-    loginScreen: "SIGNIN",
-    isSigningUp: false,
-    isLoggingIn: false,
-    signInError: "",
-    signUpError: "",
-    allowDashboard: false,
-    username: "",
-    signUpSuccess: false,
-    selectedTeam: null,
-    selectedTeamValue: "",
+
     isImageModalOpen: false,
     isGettingImages: true,
-    userId: "",
     isPostingImage: false,
     images: [],
+
     isGettingToDos: true,
-    toDos: []
+    toDos: [],
+    selectedToDo: null,
+    isToDoDialogOpen: false,
+    toDoDialogMode: "CREATE",
+    dashboardScreen: "DASHBOARD",
+
+    toDoChangeSubmitting: false,
 
 }
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case SET_SELECTED_TEAM:
-            let resultingTeam = state.teamsVictoryInfo.find(e => e.HomeTeam === action.payload)
-            console.log(resultingTeam)
-            //selected team in as string.
-            //find it in teams array
-
-            return {
-                ...state,
-                selectedTeamValue: action.payload,
-                selectedTeam: resultingTeam,
-            }
         case SET_CLOTHES:
             let data = action.payload.payload
             let uniqueArray = Array.from(new Set(data.map(s => s.clothe))).map(clothe => {
@@ -89,20 +81,40 @@ export default function (state = initialState, action) {
                 let item_count = 0
                 let current_item = uniqueArray[i]
                 for (let j = 0; j < data.length; j++) {
-                    //compare current item to
-
                     if (data[j].clothe === current_item.clothe) {
                         item_count++
                     }
                 }
-
                 result_pairs.push({name: current_item.clothe, count: item_count})
             }
-
             return {
                 ...state,
                 clothes: action.payload,
                 clothesCounted: result_pairs
+            }
+        case SET_SELECTED_TEAM:
+            let resultingTeam = state.teamsVictoryInfo.find(e => e.HomeTeam === action.payload)
+            return {
+                ...state,
+                selectedTeamValue: action.payload,
+                selectedTeam: resultingTeam,
+            }
+        case SET_IS_TEAM_INSPECTOR_OPEN:
+            return {
+                ...state,
+                isTeamInspectorOpen: action.payload,
+            }
+        case SET_TO_DO_DIALOG_MODE:
+            console.log("Set dashboard")
+            console.log(action.payload)
+            return {
+                ...state,
+                toDoDialogMode: action.payload,
+            }
+        case SET_IS_GETTING_SPORTS:
+            return {
+                ...state,
+                isSportsLoading: action.payload,
             }
         case SET_IS_GETTING_CLOTHING:
             return {
@@ -114,18 +126,34 @@ export default function (state = initialState, action) {
                 ...state,
                 images: action.payload,
             }
-        case SET_USER_ID:
+        case SET_IS_GETTING_IMAGES:
             return {
                 ...state,
-                userId: action.payload,
+                isGettingImages: action.payload,
+            }
+        case SET_IS_POSTING_IMAGE:
+            return {
+                ...state,
+                isPostingImage: action.payload,
+            }
+        case SET_IS_IMAGE_MODAL_OPEN:
+            return {
+                ...state,
+                isImageModalOpen: action.payload,
+            }
+        case SET_DASHBOARD_SCREEN:
+
+            return {
+                ...state,
+                dashboardScreen: action.payload,
+                selectedToDo: null
             }
 
-        case SET_IS_GETTING_TODOS:
-            console.log("setting todos!")
-            console.log(action.payload)
+        case SET_IS_TO_DO_CHANGE_SUBMITTING:
+            console.log("Is Title submitting:" + action.payload)
             return {
                 ...state,
-                isGettingToDos: action.payload,
+                toDoChangeSubmitting: action.payload,
             }
 
         case SET_TODOS:
@@ -133,62 +161,40 @@ export default function (state = initialState, action) {
                 ...state,
                 toDos: action.payload,
             }
-        case SET_IS_POSTING_IMAGE:
+        case SET_TO_DO_DIALOG:
             return {
                 ...state,
-                isPostingImage: action.payload,
+                isToDoDialogOpen: action.payload,
             }
-        case SET_IS_GETTING_IMAGES:
-            return {
-                ...state,
-                isGettingImages: action.payload,
+        case SET_SELECTED_TODO:
+            let result = action.payload
+            if (action.payload == state.selectedToDo) {
+                result = null
             }
-        case SET_IS_IMAGE_MODAL_OPEN:
             return {
                 ...state,
-                isImageModalOpen: action.payload,
-            }
-        case SET_ALLOW_DASHBOARD:
-            return {
-                ...state,
-                allowDashboard: action.payload,
-            }
-        case SET_IS_TEAM_INSPECTOR_OPEN:
-            return {
-                ...state,
-                isTeamInspectorOpen: action.payload,
+                selectedToDo: result,
             }
         case SET_WEATHER:
-
             return {
                 ...state,
                 weather: action.payload,
-            }
-        case SET_SIGN_UP_SUCCESS:
-
-            return {
-                ...state,
-                signUpSuccess: action.payload,
             }
         case SET_IS_GETTING_WEATHER:
             return {
                 ...state,
                 isWeatherLoading: action.payload,
             }
-        case SET_IS_GETTING_SPORTS:
+        case SET_IS_GETTING_TODOS:
+            console.log("setting isGettingToDos: " + action.payload)
             return {
                 ...state,
-                isSportsLoading: action.payload,
+                isGettingToDos: action.payload,
             }
         case SET_IS_GETTING_NEWS:
             return {
                 ...state,
                 isNewsLoading: action.payload,
-            }
-        case SET_USERNAME:
-            return {
-                ...state,
-                username: action.payload,
             }
         case SET_NEWS:
             return {
@@ -199,42 +205,6 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 isNewsModalOpen: action.payload,
-            }
-
-        case SET_TOKEN:
-            return {
-                ...state,
-                token: action.payload,
-            }
-        case SET_IS_SIGN_IN_LOADING:
-            return {
-                ...state,
-                isSignInLoading: action.payload,
-            }
-        case SET_LOGIN_SCREEN:
-            return {
-                ...state,
-                loginScreen: action.payload,
-            }
-        case SET_IS_SIGNING_UP:
-            return {
-                ...state,
-                isSigningUp: action.payload,
-            }
-        case SET_IS_LOGGING_IN:
-            return {
-                ...state,
-                isLoggingIn: action.payload,
-            }
-        case SET_SIGN_IN_ERROR:
-            return {
-                ...state,
-                signInError: action.payload,
-            }
-        case SET_SIGN_UP_ERROR:
-            return {
-                ...state,
-                signUpError: action.payload,
             }
         case SET_SPORTS:
 

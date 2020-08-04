@@ -1,8 +1,8 @@
-import React, {Component, Fragment} from "react";
+import React, {Component} from "react";
 import {connect} from "react-redux";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import withTheme from "@material-ui/core/styles/withTheme";
 
 const styles = theme => ({});
 
@@ -11,11 +11,8 @@ class DashboardCard extends Component {
         super(props)
     }
 
-    componentDidMount() {
-    }
-
     render() {
-        const {classes} = this.props;
+        const {theme} = this.props;
 
         return (
             <Grid item style={{
@@ -30,7 +27,7 @@ class DashboardCard extends Component {
                     overflow: "hidden",
                 }}>
                     <Typography variant={"h6"} style={{
-                        backgroundColor: "#5cac9c",
+                        backgroundColor: theme.palette.primary.light,
                         display: "inline-block",
                         width: "100%",
                         height: 36,
@@ -61,4 +58,4 @@ const mapStateToProps = state => ({});
 
 const mapDispatch = {}
 
-export default connect(mapStateToProps, mapDispatch)(withStyles(styles)(DashboardCard));
+export default connect(mapStateToProps, mapDispatch)(withTheme(DashboardCard));

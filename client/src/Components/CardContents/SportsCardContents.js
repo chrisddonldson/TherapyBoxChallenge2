@@ -1,15 +1,15 @@
 import React, {Component, Fragment} from "react";
 import {connect} from "react-redux";
 import withStyles from "@material-ui/core/styles/withStyles";
-import {setIsTeamInspectorOpen, setSelectedTeam, setupSports} from "../../actions/placeholderActions";
+import {setIsTeamInspectorOpen, setSelectedTeam, setupSports} from "../../actions/appActions";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
+
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import withTheme from "@material-ui/core/styles/withTheme";
 
 const styles = theme => ({});
 
@@ -34,7 +34,7 @@ class SportsCardContents extends Component {
     };
 
     render() {
-        const {classes} = this.props;
+        const {theme} = this.props;
 
         return (
             (this.props.isSportsLoading ? (<p>Loading...</p>) : (
@@ -66,7 +66,8 @@ class SportsCardContents extends Component {
                                         float: "left",
                                         padding: 4,
                                         margin: 4,
-                                        backgroundColor: "#b0ceae",
+                                        backgroundColor: theme.palette.secondary.main,
+                                        color:"#fff",
                                         borderRadius: 2
                                     }} key={v+i}>{v}</p>
                                 })}
@@ -74,7 +75,7 @@ class SportsCardContents extends Component {
                         </Container>
                     </Dialog>
                     <Typography>Currently Selected Team: <b>{this.props.selectedTeamValue}</b></Typography>
-                    <Button onClick={() => this.props.setIsTeamInspectorOpen(true)}>Explore Stats</Button>
+                    <Button onClick={() => this.props.setIsTeamInspectorOpen(true)} variant={"outlined"} color={"secondary"}>Explore Stats</Button>
                 </Fragment>
             ))
 
@@ -83,12 +84,12 @@ class SportsCardContents extends Component {
 }
 
 const mapStateToProps = state => ({
-    sports: state.placeholderR.sports,
-    isSportsLoading: state.placeholderR.isSportsLoading,
-    isTeamInspectorOpen: state.placeholderR.isTeamInspectorOpen,
-    teamsVictoryInfo: state.placeholderR.teamsVictoryInfo,
-    selectedTeam: state.placeholderR.selectedTeam,
-    selectedTeamValue: state.placeholderR.selectedTeamValue,
+    sports: state.appR.sports,
+    isSportsLoading: state.appR.isSportsLoading,
+    isTeamInspectorOpen: state.appR.isTeamInspectorOpen,
+    teamsVictoryInfo: state.appR.teamsVictoryInfo,
+    selectedTeam: state.appR.selectedTeam,
+    selectedTeamValue: state.appR.selectedTeamValue,
 
 });
 
@@ -98,4 +99,4 @@ const mapDispatch = {
     setSelectedTeam
 }
 
-export default connect(mapStateToProps, mapDispatch)(withStyles(styles)(SportsCardContents));
+export default connect(mapStateToProps, mapDispatch)(withTheme(SportsCardContents));

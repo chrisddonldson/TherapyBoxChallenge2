@@ -20,8 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="327353bc-d57f-4b08-83b5-9d9cf202a078" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/sagas/appSagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/{" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ClothingCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ClothingCardContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/NewsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/NewsCardContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/SportsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/SportsCardContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/WeatherCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/WeatherCardContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/piechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/piechart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/CreateToDo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/EditToDo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/ToListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/todo/ToDoListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/TodoItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/todo/TodoItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/appActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/appReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/Components/todo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/sagas" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -56,16 +81,16 @@
     <property name="ts.external.directory.path" value="C:\Users\Chris\AppData\Local\JetBrains\PyCharm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GitHub\TherapyBox\TherapyBox\client\public" />
-      <recent name="D:\GitHub\TherapyBox\TherapyBox\client\src\Components\CardContents" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\TherapyBox\TherapyBox\client\src\sagas" />
+      <recent name="D:\GitHub\TherapyBox\TherapyBox\client\src\reducers" />
       <recent name="D:\GitHub\TherapyBox\TherapyBox\client\src\Components\todo" />
       <recent name="D:\GitHub\TherapyBox\TherapyBox\models" />
       <recent name="D:\GitHub\TherapyBox\TherapyBox\routes" />
-      <recent name="D:\GitHub\TherapyBox\TherapyBox\client\src\Components" />
-      <recent name="D:\GitHub\mern_stack\mern_stack\client\src\Components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\TherapyBox\TherapyBox\client\public" />
+      <recent name="D:\GitHub\TherapyBox\TherapyBox\client\src\Components\CardContents" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,7 +128,8 @@
       <workItem from="1596309959827" duration="3069000" />
       <workItem from="1596313060864" duration="12600000" />
       <workItem from="1596352209772" duration="19404000" />
-      <workItem from="1596374603026" duration="42418000" />
+      <workItem from="1596374603026" duration="55806000" />
+      <workItem from="1596528028988" duration="26377000" />
     </task>
     <servers />
   </component>
@@ -151,9 +177,9 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1892" height="290" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1596120157552" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1596440112296">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1596555760456">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596440112296" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596555760456" />
   </component>
 </project>

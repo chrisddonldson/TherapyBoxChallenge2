@@ -3,8 +3,11 @@
 */
 import {combineReducers} from 'redux';
 
-import placeholderReducer from "./placeholderReducer";
+
+import userReducer from "./userReducer";
+import appReducer from "./appReducer";
 
 export default combineReducers({
-    placeholderR: placeholderReducer,
+    appR: appReducer,
+    userR: userReducer,
 });

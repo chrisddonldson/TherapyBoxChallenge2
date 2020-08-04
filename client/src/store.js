@@ -5,18 +5,22 @@ import rootReducer from './reducers/rootReducer';
 import promise from "redux-promise-middleware"
 import createSagaMiddleware from 'redux-saga'
 import {
-    watchGetToDos,
-    watchGetWeather, watchLogin, watchLogout, watchPostImage,
-    watchSetupClothing,
-    watchSetupDashboard, watchSetUpImages,
-    watchSetupNews,
-    watchSetupSports, watchSignup, watchVerifyToken
+    watchLogin, watchLogout,
+    watchSignup, watchVerifyToken
 } from "./sagas/dashboardSagas";
+import {
+    watchDeleteToDo,
+    watchGetToDos,
+    watchGetWeather, watchNewToDo, watchPostImage,
+    watchSetupClothing,
+    watchSetUpImages,
+    watchSetupNews,
+    watchSetupSports, watchSubmitCompleted, watchSubmitNotes, watchSubmitTitle
+} from "./sagas/appSagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(rootReducer, applyMiddleware(promise, thunk, sagaMiddleware))
-sagaMiddleware.run(watchSetupDashboard)
 sagaMiddleware.run(watchGetWeather)
 sagaMiddleware.run(watchSetupNews)
 sagaMiddleware.run(watchSetupSports)
@@ -28,4 +32,10 @@ sagaMiddleware.run(watchSignup)
 sagaMiddleware.run(watchSetUpImages)
 sagaMiddleware.run(watchPostImage)
 sagaMiddleware.run(watchGetToDos)
+sagaMiddleware.run(watchSubmitTitle)
+sagaMiddleware.run(watchSubmitNotes)
+sagaMiddleware.run(watchSubmitCompleted)
+sagaMiddleware.run(watchDeleteToDo)
+sagaMiddleware.run(watchNewToDo)
+
 export default store;

@@ -3,9 +3,9 @@ import {capitalize} from "@material-ui/core";
 
 
 const drawPieChart = (props) => {
-    let width = 250
-    let height = 250
-    let margin = 20
+    let width = 150
+    let height = 150
+    let margin = 4
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
     var radius = Math.min(width, height) / 2 - margin
@@ -26,11 +26,12 @@ const drawPieChart = (props) => {
     // "jumper":189,
 
 
-
+    console.log("pie props")
+    console.log( props.theme.palette.primary.main)
 // set the color scale
     let color = d3.scaleOrdinal()
         .domain(data)
-        .range(["#a0d58a", "#73b665", "#58a55f", "#438b4d", "#2d6c5a", "#2d6c5a"])
+        .range([props.theme.palette.primary.main, props.theme.palette.primary.dark, props.theme.palette.primary.light, props.theme.palette.secondary.main, props.theme.palette.secondary.dark,  props.theme.palette.secondary.light])
 
 // Compute the position of each group on the pie:
     let pie = d3.pie()
@@ -52,13 +53,11 @@ const drawPieChart = (props) => {
         .attr('fill', function (d) {
             return (color(d.data.key))
         })
-        .attr("stroke", "black")
-        .style("stroke-width", "2px")
-        .style("opacity", 0.7)
+
 
     let label = d3.arc()
         .outerRadius(radius)
-        .innerRadius(radius -30);
+        .innerRadius(radius - 40);
 
     svg
         .selectAll('mySlices')
@@ -66,15 +65,15 @@ const drawPieChart = (props) => {
         .enter()
         .append('text')
         .text(function (d) {
-            return  capitalize(d.data.value.name)
+            return capitalize(d.data.value.name)
         })
         .attr("transform", function (d) {
             return "translate(" + label.centroid(d) + ")";
         })
         .style("text-anchor", "middle")
-        .style("font-size", 17)
+        .style("font-size", 10)
         .style("font-weight", "bold")
-        .style("font-color", "#3b9771")
+        .style("fill", "#FFF")
 
 
 }

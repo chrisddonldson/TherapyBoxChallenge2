@@ -1,13 +1,13 @@
 import React, {Component, Fragment} from "react";
 import {connect} from "react-redux";
 import withStyles from "@material-ui/core/styles/withStyles";
-import {setNewsModal, setupNews} from "../../actions/placeholderActions";
+import {setNewsModal, setupNews} from "../../actions/appActions";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Modal from "@material-ui/core/Modal";
+
 import Container from "@material-ui/core/Container";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+
+
 import Dialog from "@material-ui/core/Dialog";
 import Grid from "@material-ui/core/Grid";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -51,7 +51,6 @@ class NewsCardContents extends Component {
             }
         }
         return (
-
             (this.props.isNewsLoading ? (
 
                 <Grid container justify="center"
@@ -62,7 +61,6 @@ class NewsCardContents extends Component {
                 </Grid>
 
             ) : (
-
                 <Fragment>
                     <Dialog
                         open={this.props.isNewsModalOpen}
@@ -87,7 +85,7 @@ class NewsCardContents extends Component {
                     <Typography variant={"subtitle1"} style={{fontSize: 10}}><a
                         href={this.props.news.items[0].link}>{this.props.news.items[0].link}</a></Typography>
                     <Typography variant={"body1"}>{this.props.news.items[0].content}</Typography>
-                    <Button onClick={() => this.props.setNewsModal(true)}>Read More</Button>
+                    <Button onClick={() => this.props.setNewsModal(true)} variant={"outlined"} color={"secondary"}>Read More</Button>
                 </Fragment>
             ))
 
@@ -96,9 +94,9 @@ class NewsCardContents extends Component {
 }
 
 const mapStateToProps = state => ({
-    news: state.placeholderR.news,
-    isNewsLoading: state.placeholderR.isNewsLoading,
-    isNewsModalOpen: state.placeholderR.isNewsModalOpen,
+    news: state.appR.news,
+    isNewsLoading: state.appR.isNewsLoading,
+    isNewsModalOpen: state.appR.isNewsModalOpen,
 
 });
 

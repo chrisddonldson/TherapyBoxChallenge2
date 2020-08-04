@@ -39,7 +39,7 @@ const upload = multer({
 });
 
 router.post("/file/", upload.single("imagePost"), (req, res, next) => {
-    console.log(req.file)
+
     const {filename: image} = req.file
     sharp(req.file.path)
         .resize(280)
@@ -48,14 +48,14 @@ router.post("/file/", upload.single("imagePost"), (req, res, next) => {
             path.resolve(req.file.destination, 'resized', image)
         ).then(() => {
 
-        console.log("Uploaded resize")
+
         const imagePost = new ImagePost({
             userId: req.body.userId,
             image_loc: "\\uploads\\" + image,
             image_sm_loc: "\\uploads\\resized\\" + image
         })
         imagePost.save().then(result => {
-            console.log(result);
+
             res.status(201).json({
                 message: "Image Uploaded Successful"
             })
@@ -79,16 +79,16 @@ router.post("/file/", upload.single("imagePost"), (req, res, next) => {
 })
 
 router.get("/file/", (req, res, next) => {
- let {query} = req
+    let {query} = req
     let {userId} = query
-    console.log(userId)
+
     ImagePost.find(
         {userId: userId},
         (err, imagePosts) => {
             if (err) {
                 return res.send({success: false, message: 'Server error'})
             } else {
-                return res.json({success:true, data:imagePosts})
+                return res.json({success: true, data: imagePosts})
             }
         })
 })
@@ -301,7 +301,7 @@ router.get('/verify', (req, res) => {
         } else {
 
             let session = sessions[0]
-            console.log("FINDING")
+
             User.findById(session.userId).then((user) =>
                 res.send({
                         success: true,
@@ -342,7 +342,7 @@ router.get('/logout', (req, res) => {
 
 })
 
-router.post("/todo/create", (req, res) => {
+router.post("/todo/new", (req, res) => {
     const {body} = req
     let {title, notes, completed, userId} = body;
 
@@ -351,7 +351,7 @@ router.post("/todo/create", (req, res) => {
     newTodo.notes = notes
     newTodo.completed = completed
     newTodo.userId = userId
-    newTodo.save((err, todo) => {
+    newTodo.save((err, todos) => {
         if (err) {
             return res.send({
                 success: false,
@@ -360,44 +360,124 @@ router.post("/todo/create", (req, res) => {
         }
         return res.send({
             success: true,
-            message: "Todo Created"
+            message: "Todo Created",
+            todos: todos
         })
     })
 })
 
-router.post("/todo/update", (req, res) => {
+router.post("/todo/delete", (req, res) => {
     const {body} = req
-    let {todoId, title, notes, completed} = body;
-    let filter = {_id: todoId}
-    let update = {
-        title: title,
-        notes: notes,
-        completed: completed,
-    }
-    let updated = Todo.findOneAndUpdate(filter, update, {new: true})
+    console.log(body)
+    let {todoId} = body;
+    console.log(todoId)
+    console.log("deleting")
+    Todo.deleteOne({_id: todoId}, (err, todos) => {
+        if (err) {
+            return res.send({
+                success: false,
+                message: 'Error: Server error'
+            })
+        } else {
+            return res.send({
+                success: true,
+                message: 'Good',
+            })
+        }
 
-
-    res.send({
-        success: true,
-        message: "Good",
-        update: updated
     })
-
-
 })
 
-router.get("/todo", (req, res) => {
+router.post("/todo/updatetitle", (req, res) => {
+    console.log("update title")
+    const {body} = req
+    let {_id, title} = body;
+    console.log("new title")
+    console.log(title)
+    Todo.updateOne({_id: _id}, {$set: {title: title}}, (err, todos) => {
+        if (err) {
+            return res.send({
+                success: false,
+                message: 'Error: Server error'
+            })
+        } else {
+            return res.send({
+                success: true,
+                message: 'Good',
+                todos: todos
+            })
+        }
+
+    })
+})
+
+router.post("/todo/updatenotes", (req, res) => {
+    console.log("update notes")
+    const {body} = req
+    let {_id, notes} = body;
+    console.log("new notes")
+    console.log(notes)
+    Todo.updateOne({_id: _id}, {$set: {notes: notes}}, (err, todos) => {
+        if (err) {
+            return res.send({
+                success: false,
+                message: 'Error: Server error'
+            })
+        } else {
+            return res.send({
+                success: true,
+                message: 'Good',
+                todos: todos
+            })
+        }
+
+    })
+})
+
+router.post("/todo/updatecompleted", (req, res) => {
+    console.log("update completed")
+    const {body} = req
+    let {_id, completed} = body;
+    console.log("new completed")
+
+    Todo.updateOne({_id: _id}, {$set: {completed: completed}}, (err, sessions) => {
+        if (err) {
+            return res.send({
+                success: false,
+                message: 'Error: Server error'
+            })
+        } else {
+            return res.send({
+                success: true,
+                message: 'Good'
+            })
+        }
+
+    })
+})
+
+
+router.post("/todo", (req, res) => {
+    console.log("get todos")
     const {body} = req
     let {userId} = body;
+
+    console.log("id:" + userId)
+    console.log(body)
     Todo.find({
         userId: userId
-    }, (err, todos) => {
+    }, ((err, docs) => {
         if (err) {
-            return res.send({success: false, message: 'Server error'})
+            res.send({
+                success: false,
+                message: err,
+
+            })
         } else {
-            return res.send(todos)
+            res.json(docs)
         }
-    })
+    }))
+
 })
 
 

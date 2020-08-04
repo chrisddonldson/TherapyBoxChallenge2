@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import {login, setLoginScreen, setSignupSuccess} from "../actions/placeholderActions";
+import {login, setLoginScreen, setSignupSuccess} from "../actions/appActions";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from '@material-ui/lab/Alert';
 
@@ -56,7 +56,14 @@ class SignIn extends Component {
     };
 
     render() {
-
+        let errorStyle = {
+            backgroundColor:"#de4a4a",
+            color:"white",
+            padding:4,
+            margin:4,
+            borderRadius: 4,
+            fontSize:11
+        }
         return (
             <Fragment>
                 <Snackbar open={this.props.signUpSuccess} autoHideDuration={6000} style={{zIndex:80}}
@@ -77,6 +84,7 @@ class SignIn extends Component {
                     style={{float: "left", padding: 8}}
                     value={this.state.username}
                     onChange={this.handleInputChange}
+                    fullWidth
                 />
                 <TextField
                     id={"password"}
@@ -87,15 +95,18 @@ class SignIn extends Component {
                     style={{float: "right", padding: 8}}
                     value={this.state.password}
                     onChange={this.handleInputChange}
+                     fullWidth
                 />
                 <br/>
-                <Button fullWidth style={{marginTop: 16}} onClick={this.onSubmit}> Login</Button>
-                <Typography color={"error"}>{this.props.signInError}</Typography>
+                <Button fullWidth style={{marginTop: 16}} onClick={this.onSubmit} color={"primary"} variant="contained">  Login</Button>
+                {this.props.signInError=="" ?(null):( <Typography color={"error"} align={"center"} style={errorStyle}>{this.props.signInError}</Typography>) }
+
+
                 <Typography style={{
                     marginTop: 16,
                     marginLeft: "auto",
                     marginRight: "auto"
-                }} align={"center"}> New to the challenge? <Button onClick={() => {
+                }} align={"center"}> New to the challenge?<br/><br/> <Button color={"secondary"} variant="outlined" onClick={() => {
                     this.props.setLoginScreen("SIGNUP")
                 }}>Sign Up</Button>
                     {this.props.isLoggingIn ? (
@@ -111,8 +122,8 @@ class SignIn extends Component {
 }
 
 const mapStateToProps = state => ({
-    signInError: state.placeholderR.signInError,
-    signUpSuccess: state.placeholderR.signUpSuccess
+    signInError: state.userR.signInError,
+    signUpSuccess: state.userR.signUpSuccess
 
 });
 
