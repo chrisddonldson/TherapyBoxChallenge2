@@ -114,7 +114,6 @@ router.get('/news', (rew, res) => {
         puppeteer.launch({
             args: [
                 '--no-sandbox',
-                '--disable-setuid-sandbox',
             ],
         }).then(browser => {
             console.log("Launching puppeteer... ")
