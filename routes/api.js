@@ -111,11 +111,7 @@ router.get('/news', (rew, res) => {
         console.log("RSS feed located and parsed")
         let queryUrl = data.items[0].link
         console.log("Located the link for the headline image")
-        puppeteer.launch({
-            args: [
-                '--no-sandbox',
-            ],
-        }).then(browser => {
+        puppeteer.launch({ args: ['--no-sandbox'] }).then(browser => {
             console.log("Launching puppeteer... ")
             browser.newPage().then(page => {
                 console.log("Opening new tab and heading to " + queryUrl + "... ")
