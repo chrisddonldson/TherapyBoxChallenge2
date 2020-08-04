@@ -7,6 +7,7 @@ import SignUp from "./SignUp";
 import {verifyToken} from "../actions/appActions";
 import Dashboard from "./Dashboard";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Typography from "@material-ui/core/Typography";
 
 class Home extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class Home extends Component {
 
     getLoginScreen() {
         return <Grid container
-                     direction="row"
+                     direction="column"
                      justify="center"
                      alignItems="center"
                      style={{height: "100%"}}>
@@ -32,7 +33,9 @@ class Home extends Component {
             }}>
                 {this.props.loginScreen === "SIGNIN" ? (<SignIn/>) : (null)}
                 {this.props.loginScreen === "SIGNUP" ? (<SignUp/>) : (null)}
+
             </Grid>
+            <Typography style={{color:"white", fontSize:12, paddingTop:8}}>Chris Donaldson 2020 - Therapy Box</Typography>
         </Grid>
     }
 

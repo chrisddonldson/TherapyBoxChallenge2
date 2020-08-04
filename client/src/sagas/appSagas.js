@@ -177,19 +177,18 @@ function* doGetWeather(action) {
 
 function* doSetUpNews(action) {
     yield put({type: "SET_IS_GETTING_NEWS", payload: true})
-   yield axios.get('/api/news')
+    let news = yield axios.get('/api/news')
         .then(r => {
-
-     put({type: "SET_NEWS", payload: r.data})
-     put({type: "SET_IS_GETTING_NEWS", payload: false})
+            return r.data
         }, (error) => {
             console.log(error)
-            console.log("failure in the news supplychain")
-        }).catch(e=>{
+            console.log("failure in the news supply chain")
+
+        }).catch(e => {
             console.log(e)
-
         })
-
+    yield put({type: "SET_NEWS", payload: news})
+    yield put({type: "SET_IS_GETTING_NEWS", payload: false})
 }
 
 function* doSetUpSports(action) {

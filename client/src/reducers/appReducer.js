@@ -105,8 +105,6 @@ export default function (state = initialState, action) {
                 isTeamInspectorOpen: action.payload,
             }
         case SET_TO_DO_DIALOG_MODE:
-            console.log("Set dashboard")
-            console.log(action.payload)
             return {
                 ...state,
                 toDoDialogMode: action.payload,
@@ -150,7 +148,6 @@ export default function (state = initialState, action) {
             }
 
         case SET_IS_TO_DO_CHANGE_SUBMITTING:
-            console.log("Is Title submitting:" + action.payload)
             return {
                 ...state,
                 toDoChangeSubmitting: action.payload,
@@ -186,12 +183,13 @@ export default function (state = initialState, action) {
                 isWeatherLoading: action.payload,
             }
         case SET_IS_GETTING_TODOS:
-            console.log("setting isGettingToDos: " + action.payload)
             return {
                 ...state,
                 isGettingToDos: action.payload,
             }
         case SET_IS_GETTING_NEWS:
+            console.log("is getting news")
+            console.log(action.payload)
             return {
                 ...state,
                 isNewsLoading: action.payload,

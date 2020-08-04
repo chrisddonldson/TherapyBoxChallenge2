@@ -32,24 +32,27 @@ class NewsCardContents extends Component {
 
     render() {
         const {classes} = this.props;
-        let container = {
-            width: "100%",
-            height: 200,
-        }
+
+        // This code displays the Image when Puppeteer.js functions correctly.
+        // Works locally but not on the server.
+        // let container = {
+        //     width: "100%",
+        //     height: 200,
+        // }
 
         let imageContainer = {}
-        if (!this.props.isNewsLoading) {
-            imageContainer = {
-                position: "relative",
-                margin: "0 auto",
-                background: "url(" + this.props.news.imgs + ") no-repeat center center",
-                backgroundSize: "cover",
-                maxWidth: "100%",
-                width: "100%",
-                height: "100%",
-
-            }
-        }
+        // if (!this.props.isNewsLoading) {
+        //     imageContainer = {
+        //         position: "relative",
+        //         margin: "0 auto",
+        //         background: "url(" + this.props.news.imgs + ") no-repeat center center",
+        //         backgroundSize: "cover",
+        //         maxWidth: "100%",
+        //         width: "100%",
+        //         height: "100%",
+        //
+        //     }
+        // }
         return (
             (this.props.isNewsLoading ? (
 
@@ -69,18 +72,18 @@ class NewsCardContents extends Component {
                     >
                         <Container style={{marginTop:32, marginBottom:32}}>
                             <Typography variant={"h3"}>{this.props.news.items[0].title}</Typography>
-                            <div style={container}>
-                                <img style={imageContainer}></img>
-                            </div>
+                            {/*<div style={container}>*/}
+                            {/*    <img style={imageContainer}></img>*/}
+                            {/*</div>*/}
                             <Typography variant={"body1"}>{this.props.news.items[0].content}</Typography>
                             <Typography variant={"subtitle1"}>Read more at: <a href={this.props.news.items[0].link}>{this.props.news.items[0].link}</a></Typography>
 
 
                         </Container>
                     </Dialog>
-                    <div style={container}>
-                        <img style={imageContainer}></img>
-                    </div>
+                    {/*<div style={container}>*/}
+                    {/*    <img style={imageContainer}></img>*/}
+                    {/*</div>*/}
                     <Typography variant={"h6"}>{this.props.news.items[0].title}</Typography>
                     <Typography variant={"subtitle1"} style={{fontSize: 10}}><a
                         href={this.props.news.items[0].link}>{this.props.news.items[0].link}</a></Typography>
