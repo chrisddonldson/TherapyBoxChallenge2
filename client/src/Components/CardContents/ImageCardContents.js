@@ -20,6 +20,7 @@ class ImageCardContents extends Component {
         this.handleClose = this.handleClose.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onChange = this.onChange.bind(this)
+        this.getImages = this.getImages.bind(this)
     }
 
     componentDidMount() {
@@ -41,6 +42,47 @@ class ImageCardContents extends Component {
         this.setState({file: event.target.files[0]})
     }
 
+    getImages() {
+        //if there are no images then this wont be called
+        let imgStyle = {marginLeft: "auto", marginRight: "auto", display: "block"}
+        if (this.props.images.length == 1) {
+            return <img src={this.props.images[this.props.images.length - 1].image_sm_loc}
+                        style={imgStyle}/>
+        }
+        if (this.props.images.length == 2) {
+            imgStyle = { display: "inline-block", padding:4, width: 150, height: "auto"}
+            return <div style={{display:"block", margin:"auto", width:316}}>
+                <img src={this.props.images[this.props.images.length - 1].image_sm_loc}
+                     style={imgStyle}/>
+                <img src={this.props.images[this.props.images.length - 2].image_sm_loc}
+                     style={imgStyle}/>
+            </div>
+        }
+        if (this.props.images.length == 3) {
+               imgStyle = { display: "inline-block", padding:4, width: 150, height: "auto"}
+            return <div style={{display:"block", margin:"auto", width:316}}>
+                <img src={this.props.images[this.props.images.length - 1].image_sm_loc}
+                     style={imgStyle}/>
+                <img src={this.props.images[this.props.images.length - 2].image_sm_loc}
+                     style={imgStyle}/>
+                <img src={this.props.images[this.props.images.length - 3].image_sm_loc}
+                    style={imgStyle}/>
+            </div>}
+        if (this.props.images.length > 3) {
+               imgStyle = { display: "inline-block", padding:4, width: 150, height: "auto"}
+            return <div style={{display:"block", margin:"auto", width:316}}>
+                <img src={this.props.images[this.props.images.length - 1].image_sm_loc}
+                     style={imgStyle}/>
+                <img src={this.props.images[this.props.images.length - 2].image_sm_loc}
+                     style={imgStyle}/>
+                <img src={this.props.images[this.props.images.length - 3].image_sm_loc}
+                     style={imgStyle}/>
+                <img src={this.props.images[this.props.images.length - 4].image_sm_loc}
+                     style={imgStyle}/>
+            </div>
+        }
+    }
+
     render() {
         const {classes} = this.props;
 
@@ -52,14 +94,18 @@ class ImageCardContents extends Component {
                     style={{outline: "none", paddingTop: 32, paddingBottom: 32}}
                 >
                     <Container style={{marginTop: 32, marginBottom: 32}}>
-                        <form onSubmit={this.handleSubmit}>
+                        <div style={{  height:300, overflow:"auto",  width: "100%", whiteSpace:"nowrap" }}>
+                                {this.props.images.length > 0 ? (
+                                this.props.images.map((item, i) => {
+                                        return<img key={item.image_sm_loc} src={item.image_sm_loc}
+                                         style={{ padding:4, clear:"right"}}/>
+                                    }
+                                )) : (null)}
+                                </div>
+                        <form onSubmit={this.handleSubmit} style={{width:"100%" }}>
                             <input type={"file"} id={"imagePost"} name={"imagePost"} onChange={this.onChange}/>
-                            {this.props.images.length > 0 ? (
-                                this.props.images.map((item, i) =>{
-                                    return <img key={item.image_sm_loc} src={item.image_sm_loc} style={{float:"left"}}/>
-                                }
-                            )) : (null)}
-                            <Button type={"submit"} variant={"outlined"}>Upload file</Button>
+
+                            <Button type={"submit"} variant={"contained"} color={"primary"}>Upload file</Button>
                             {this.props.isPostingImage ? (
                                 <CircularProgress/>
                             ) : (
@@ -77,9 +123,10 @@ class ImageCardContents extends Component {
                     </Grid>) : (
                     <Fragment>
 
-                        {this.props.images.length > 0 ? (<img src={this.props.images[this.props.images.length-1].image_sm_loc} style={{ marginLeft:"auto", marginRight:"auto", display:"block"}}/>) : (null)}
+                        {this.props.images.length > 0 ? (this.getImages()) : (null)}
                         <br/>
-                         <Button onClick={() => this.props.setImageModalOpen(true)} style={{marginTop:8}} fullWidth variant={"outlined"} color={"secondary"}>
+                        <Button onClick={() => this.props.setImageModalOpen(true)} style={{marginTop: 8}} fullWidth
+                                variant={"outlined"} color={"secondary"}>
                             View images
                         </Button>
                     </Fragment>)

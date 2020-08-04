@@ -196,6 +196,7 @@ class ToDoCardContents extends Component {
                             >
                                 <DeleteIcon/>
                             </IconButton>
+                            <Typography style={{color:"#9e9e9e", fontSize:10, paddingTop:16}}>Hint: Save your text edits to the server with enter!</Typography>
                             {this.props.isTitleSubmitting ? (<CircularProgress/>) : (null)}
                             {this.getFullScreenButton()}
 
