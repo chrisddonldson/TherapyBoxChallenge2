@@ -42,7 +42,7 @@ class Home extends Component {
             return (<Grid container justify="center"
                           alignItems="center" style={{height: 360}}>
                 <Grid item>
-                    <CircularProgress color/>
+                    <CircularProgress />
                 </Grid>
             </Grid>)
         } else {

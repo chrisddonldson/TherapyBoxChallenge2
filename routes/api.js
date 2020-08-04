@@ -103,24 +103,70 @@ router.get('/clothes', (rew, res) => {
 
 router.get('/news', (rew, res) => {
     let rss = "http://feeds.bbci.co.uk/news/rss.xml"
+    console.log("Starting the hunt for news")
+    console.log("-----------------------")
+    console.log("-----------------------")
+    console.log("-----------------------")
     parser.parseURL(rss).then((data) => {
+        console.log("RSS feed located and parsed")
         let queryUrl = data.items[0].link
-        puppeteer.launch().then(browser => {
-                browser.newPage().then(page => {
-                    page.goto(queryUrl).then(() => {
-                            page.$eval('img', img => img.src).then(imgs => {
-                                    data.imgs = imgs
-                                    res.json(data);
-                                }
-                            )
-                        }
-                    )
-
-                })
-            }
-        )
+        console.log("Located the link for the headline image")
+        puppeteer.launch({
+            'args': [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+            ],
+        }).then(browser => {
+            console.log("Launching puppeteer... ")
+            browser.newPage().then(page => {
+                console.log("Opening new tab and heading to " + queryUrl + "... ")
+                page.goto(queryUrl).then(() => {
+                    console.log("Searching for image... ")
+                    //console.log(page)
+                    page.$eval('img', img => img.src).then(imgs => {
+                        console.log("Found images")
+                        data.imgs = imgs
+                        res.json(data);
+                    }).catch(err => {
+                        console.log(err);
+                        console.log("failed to launch Puppeteer #4")
+                        res.json({
+                            success: false,
+                            message: "Sorry. Failed to launch puppeteer #4."
+                        });
+                    });
+                }).catch(err => {
+                    console.log("failed to launch Puppeteer #3")
+                    res.json({
+                        success: false,
+                        message: "Sorry. Failed to launch puppeteer #3."
+                    });
+                    console.log(err);
+                });
+            }).catch(err => {
+                console.log(err);
+                console.log("failed to launch Puppeteer #2")
+                res.json({
+                    success: false,
+                    message: "Sorry. Failed to launch puppeteer #2."
+                });
+                console.log(err);
+            });
+        }).catch(err => {
+            console.log("failed to launch Puppeteer #1")
+            res.json({
+                success: false,
+                message: "Sorry. Failed to launch puppeteer #1."
+            });
+            console.log(err);
+        });
     }).catch(err => {
+        console.log("Failed at getting RSS feed")
         console.log(err);
+        res.json({
+            success: false,
+            message: "Sorry. Failed to get BBC RSS feed."
+        });
     });
 
 

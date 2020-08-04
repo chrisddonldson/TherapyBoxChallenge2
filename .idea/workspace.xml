@@ -20,31 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="327353bc-d57f-4b08-83b5-9d9cf202a078" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/sagas/appSagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ClothingCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ClothingCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/NewsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/NewsCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/SportsCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/SportsCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/WeatherCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/WeatherCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/piechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/piechart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DashboardCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.e2e265cf93a03ffba24c660a9deca680.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.b99fbb1d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.b99fbb1d.chunk.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/CreateToDo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/EditToDo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/ToListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/todo/ToDoListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/todo/TodoItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/todo/TodoItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/placeholderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/appActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/placeholderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/appReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sagas/dashboardSagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/sagas/appSagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sagas/appSagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
@@ -129,7 +113,7 @@
       <workItem from="1596313060864" duration="12600000" />
       <workItem from="1596352209772" duration="19404000" />
       <workItem from="1596374603026" duration="55806000" />
-      <workItem from="1596528028988" duration="26377000" />
+      <workItem from="1596528028988" duration="30635000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 8080; // Step 1
 
 const routes = require('./routes/api');
 
+app.use('/uploads', express.static('client/public/uploads'))
 
 const uri =  process.env.ATLAS_URI;
 mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true}
