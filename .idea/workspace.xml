@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="327353bc-d57f-4b08-83b5-9d9cf202a078" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ImageCardContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/CardContents/ToDoCardContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Dashboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/sagas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../trydjango" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -105,7 +105,14 @@
       <workItem from="1596313060864" duration="12600000" />
       <workItem from="1596352209772" duration="19404000" />
       <workItem from="1596374603026" duration="55806000" />
-      <workItem from="1596528028988" duration="37368000" />
+      <workItem from="1596528028988" duration="38090000" />
+      <workItem from="1596649088531" duration="6301000" />
+      <workItem from="1596782138898" duration="201000" />
+      <workItem from="1597357803258" duration="1432000" />
+      <workItem from="1597389882357" duration="618000" />
+      <workItem from="1597504331254" duration="1056000" />
+      <workItem from="1597527074978" duration="1233000" />
+      <workItem from="1597937496292" duration="1195000" />
     </task>
     <servers />
   </component>
@@ -133,10 +140,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="723" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596320488733" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1596324279450">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2660" y="280" key="FileChooserDialogImpl" timestamp="1597506199869">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596324279450" />
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1596782338367" />
+    <state x="2660" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1597506199869" />
     <state width="1892" height="290" key="GridCell.Tab.0.bottom" timestamp="1596120157552">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>

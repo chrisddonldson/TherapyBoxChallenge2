@@ -114,8 +114,6 @@ class Dashboard extends Component {
                         </Typography></Grid>
                     <Grid item xs={4} style={{backgroundColor: lowerColor}}>
 
-
-
                     </Grid>
 
                     <Grid item xs={4} style={{backgroundColor: lowerColor}}>
